@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React {
+        constructor(){
+            this.library = "React"
+            this.server = "https://localhost:300"
+
+            //requirement
+            document
+                .querySelector('button')
+                .addEventListener('click', this.handleClick.bind(this));
+        }
+        handleClick(){
+            console.log("button clicked");
+            console.log(this.server);
+        }
+    }
+    const r = new React();
+</script>
+</html>
+
+//notes: 
+// In this example, we have a React class that sets up an event listener on a button. When the button is clicked, the handleClick method is called. 
+// We use bind(this) to ensure that the this context inside handleClick refers to the instance of the React class, allowing us to access its properties like server.
+// Without bind(this), this inside handleClick would refer to the button element, leading to undefined properties.
+// .bind() creates a new function with a fixed this value that can be called later.
+// bind	                              call
+Naya function banata hai	    Turant function chalata hai
+this future ke liye fix	        this sirf us call ke liye
+Call baad mein hota hai	         Call turant hota hai
